@@ -15,3 +15,24 @@
   <%= f.button :submit, class: "btn btn-success mt-3" %>
   <%= link_to 'cancel', root_path, class: "btn btn-danger mt-3"  %>
 <% end %>
+
+
+<%#= simple_form_for @cocktail do |f| %>
+  <%#= f.input :name %>
+  <%#= f.input :instructions %>
+  <%# if @cocktail.photo.present? %>
+    <%#= cl_image_tag @cocktail.photo, width: 200, class: "my-2" %>
+  <%# end %>
+  <%#= f.input :photo %>
+  <%#= f.input :photo_cache, as: :hidden %>
+  <%#= f.simple_fields_for Cocktail.new do |c| %>
+    <%#= c.association :ingredients %>
+  <%# end %>
+  <%#= f.simple_fields_for :doses do |ff| %>
+    <%#= ff.input :description %>
+  <%# end %>
+  <!-- <div class="ingredient_descriptions">
+  </div> -->
+  <%#= f.button :submit, class: "btn btn-success mt-3" %>
+  <%#= link_to 'cancel', root_path, class: "btn btn-danger mt-3"  %>
+<%# end %>
