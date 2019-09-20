@@ -38,15 +38,11 @@ class CocktailsController < ApplicationController
 
   def update
     if @cocktail.update(strong_params_cocktails)
-      params['cocktail']['ingredient_ids'][(1..-1)].each do |id|
-        dose = Dose.new()
-        dose.description = params['cocktail'][id]
+      params['cocktail']['doses_attributes'].each do |id|
+        dose = @cocktail.doses.find(id[1]['id'].to_i)
+        dose.description = id[1]['description']
         dose.cocktail = @cocktail
-        dose.ingredient_id = id
-        unless dose.save
-          @doses = @cocktail.doses
-          return render :new
-        end
+        dose.save
       end
       redirect_to root_path
     else
