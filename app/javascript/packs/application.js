@@ -1,4 +1,6 @@
 import 'bootstrap';
-import { selectedItems } from '../components/selectMultiple';
+import { selectedItems, addForm } from '../components/selectMultiple';
+
+addForm()
 
 selectedItems();

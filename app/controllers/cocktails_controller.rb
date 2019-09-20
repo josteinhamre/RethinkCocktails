@@ -6,6 +6,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
+    @doses = @cocktail.doses
   end
 
   def new
@@ -21,16 +22,18 @@ class CocktailsController < ApplicationController
         dose.cocktail = @cocktail
         dose.ingredient_id = id
         unless dose.save
+          @doses = @cocktail.doses
           return render :new
         end
       end
-      redirect_to cocktails_path
+      redirect_to root_path
     else
       render :new
     end
   end
 
   def edit
+    @doses = @cocktail.doses
   end
 
   def update

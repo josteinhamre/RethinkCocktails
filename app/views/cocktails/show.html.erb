@@ -1,2 +1,27 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h2><%= @cocktail.name %></h2>
+              <p><%= @cocktail.instructions %></p>
+            </div>
+            <div>
+              <ul class="list-unstyled">
+                <% @doses.each do |dose| %>
+                  <li><%= dose.description %> - <%= dose.ingredient.name %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div>
+              <%= link_to 'edit', edit_cocktail_path, class: "btn btn-warning"  %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

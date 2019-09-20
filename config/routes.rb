@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  resources :cocktails, except: [:destroy]
+  root 'cocktails#index'
+  resources :cocktails, except: [:destroy, :index]
 end

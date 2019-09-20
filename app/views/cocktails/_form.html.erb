@@ -4,5 +4,6 @@
   <%= f.association :ingredients %>
   <div class="ingredient_descriptions">
   </div>
-  <%= f.button :submit, class: "btn btn-primary mt-3" %>
+  <%= f.button :submit, class: "btn btn-success mt-3" %>
+  <%= link_to 'cancel', root_path, class: "btn btn-danger mt-3"  %>
 <% end %>
