@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-12">
       <div class="card-trip">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <img src=<%= @cocktail.photo.present? ? (cl_image_path @cocktail.photo) : 'https://res.cloudinary.com/lightglance/image/upload/v1568980137/photo-1517577968725-c62d5aa5cdb6_xqpffj.jpg' ; %> alt=<%= @cocktail.name %>>
         <div class="card-trip-infos">
           <div class="d-flex justify-content-between align-items-center">
-            <div>
+            <div class="w-50">
               <h2><%= @cocktail.name %></h2>
               <p><%= @cocktail.instructions %></p>
             </div>

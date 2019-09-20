@@ -3,7 +3,7 @@
     <div class="col-12">
       <div class="cards">
         <% @cocktails.each do |ct| %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= ct.photo.present? ? (cl_image_path ct.photo) : 'https://res.cloudinary.com/lightglance/image/upload/v1568980137/photo-1517577968725-c62d5aa5cdb6_xqpffj.jpg' ; %>)">
             <%= link_to ct.name, cocktail_path(ct), class: "text-white" %>
           </div>
         <% end %>
